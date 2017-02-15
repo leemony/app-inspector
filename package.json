@@ -1,0 +1,79 @@
+{
+  "name": "app-inspector",
+  "version": "1.2.18",
+  "description": "app inspector",
+  "keywords": [
+    "inspector",
+    "macaca"
+  ],
+  "bin": {
+    "inspector": "./bin/app-inspector",
+    "app-inspector": "./bin/app-inspector"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/macacajs/app-inspector.git"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "co": "^4.6.0",
+    "co-request": "^1.0.0",
+    "commander": "^2.9.0",
+    "detect-port": "^1.0.0",
+    "koa": "^1.2.1",
+    "koa-bodyparser": "^2.2.0",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0",
+    "npm-update": "^1.0.2",
+    "nunjucks": "^2.4.2",
+    "request": "^2.74.0",
+    "xlogger": "^1.0.4",
+    "xml2map": "^1.0.2",
+    "xutil": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "co-mocha": "*",
+    "command-line-test": "^1.0.5",
+    "css-loader": "^0.24.0",
+    "es6-promise": "^3.2.1",
+    "istanbul": "*",
+    "jshint": "*",
+    "json-loader": "^0.5.4",
+    "koa-webpack-dev-middleware": "^1.2.2",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "mocha": "*",
+    "pre-commit": "1.1.1",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "should": "*",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "make test",
+    "jshint": "make jshint",
+    "start": "APP_INSPECTOR=dev ./bin/app-inspector --verbose",
+    "build": "webpack -p",
+    "prepublish": "npm run build"
+  },
+  "pre-commit": [
+    "jshint"
+  ],
+  "homepage": "https://github.com/macacajs/app-inspector",
+  "bugs": "https://github.com/macacajs/app-inspector/issues/new",
+  "license": "MIT",
+  "optionalDependencies": {
+    "ios-simulator": "^1.0.7",
+    "ios-utils": "^1.0.4",
+    "macaca-adb": "^1.0.17",
+    "uiautomator-client": "^1.0.16",
+    "webdriveragent": "^1.0.12",
+    "xctest-client": "^1.0.16"
+  }
+}
