@@ -10,3 +10,4 @@ build/
 *.un~
 .temp
 public/dist
+logs
