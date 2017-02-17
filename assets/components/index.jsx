@@ -109,7 +109,7 @@ class App extends Component {
               ) : null }
             </div>
           ) : (
-            <div className="loading">Tree is Empty. Waiting...</div>
+            <div className="loading">Files Not found.</div>
           )
         }
         <AppInfo/>
