@@ -1,47 +1,62 @@
-# app-inspector
+# 截图节点展示功能 - 本地调试与使用
 
-[![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
-[![node version][node-image]][node-url]
-[![npm download][download-image]][download-url]
+------
 
-[npm-image]: https://img.shields.io/npm/v/app-inspector.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/app-inspector
-[travis-image]: https://img.shields.io/travis/macacajs/app-inspector.svg?style=flat-square
-[travis-url]: https://travis-ci.org/macacajs/app-inspector
-[coveralls-image]: https://img.shields.io/coveralls/macacajs/app-inspector.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/macacajs/app-inspector?branch=master
-[node-image]: https://img.shields.io/badge/node.js-%3E=_4-green.svg?style=flat-square
-[node-url]: http://nodejs.org/download/
-[download-image]: https://img.shields.io/npm/dm/app-inspector.svg?style=flat-square
-[download-url]: https://npmjs.org/package/app-inspector
+请先安装 **node.js** 与 **npm** 最新版本，安装后将代码复制带本地目录Dir下。
 
-[App-inspector](https://macacajs.github.io/app-inspector/) is a mobile UI viewer in browser.
+命名行进入 app-inspector 目录:
 
-## Installation
-
-App-inspector is distibuted through npm. To install it, run the following command line:
+## 编译
 
 ```shell
-$ npm install app-inspector -g
+app-inspector$ npm run build
 ```
 
-## Usage
+## 运行
 
 ```shell
-$ app-inspector -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+app-inspector$ npm run start
+```
+或者
+```shell
+app-inspector$ ./bin/app-inspector -s --verbose
 ```
 
-## Home Page
+出现如下打印信息，则启动成功：
+```shell
 
-Visit https://macacajs.github.io/app-inspector/ for more information.
+>> inspector start at: http://localhost:port
+```
+ `localhost`为本地IP地址；`port`为端口号，默认5678.
+ 
+## 截图节点数据的存放目录
 
-## Demo
+截图节点数据的存放也位于本地目录Dir下。例如：
 
-- [Android](http://ww4.sinaimg.cn/large/7dfcf2f7gw1f7bwlhpakwg20s40kge3k.gif)
-- [iOS](http://ww4.sinaimg.cn/large/7dfcf2f7gw1f7bwp1mgiyg20s40kg7wh.gif)
+    - /Users/limeng/        （本地目录Dir）
+        |_ app-inspector/    (代码目录)
+        |_ G2017020903/      (数据目录: 构建编号)
+            |_ 1/ 
+                |_ appInspector/
+                    |_ screenshot.png
+                    |_ sourcenode.txt
+            |_ 2/ 
+                |_ appInspector/
+                    |_ screenshot.png
+                    |_ sourcenode.txt
+        |_ G2017020904/ 
+            |_ 1/ 
+                |_ appInspector/
+                    |_ screenshot.png
+                    |_ sourcenode.txt
 
-## License
+数据目录下存在截图节点数据后，浏览器访问URL链接展示截图节点信息：
 
-The MIT License (MIT)
+    http://localhost:5678/构建编号/case序号
+
+例如：
+
+    http://localhost:5678/G2017020903/1
+    http://localhost:5678/G2017020903/2
+    http://localhost:5678/G2017020904/1
+
