@@ -109,7 +109,7 @@ class App extends Component {
               ) : null }
             </div>
           ) : (
-            <div className="loading">Files Not found.</div>
+            <div className="loading">Files not found. or. Session was broken.</div>
           )
         }
         <AppInfo/>
