@@ -109,7 +109,21 @@ class App extends Component {
               ) : null }
             </div>
           ) : (
-            <div className="loading">Files not found. or. Session was broken.</div>
+            appData.isPicExist ? (
+              <div className="main">
+                <div className="flex-col">
+                  <Screen
+                    frame={this.state.focusBounds}
+                    onClick={this.handleCanvasClick.bind(this)}
+                    isIOS={this.state.isIOS}
+                    src={this.state.path + (this.state.isIOS ? '/ios-screenshot.png' : '/android-screenshot.png')}
+                  />
+                </div>
+                <div className="loading">Source node Invalid.</div>
+              </div>                
+            ) : (
+              <div className="loading">Files Not Exist. (Session broken)</div>
+            )
           )
         }
         <AppInfo/>
