@@ -30,7 +30,7 @@ class App extends Component {
 
   componentDidMount() {
     if (this.state.serverStarted) {
-      fetch(this.state.path + (this.state.isIOS ? '/ios.json' : '/android.json'))
+      fetch((this.state.isIOS ? '/ios.json' : '/android.json'))
         .then(res => res.json())
         .then(tree => {
           this.setState({ tree });
@@ -89,7 +89,7 @@ class App extends Component {
                   frame={this.state.focusBounds}
                   onClick={this.handleCanvasClick.bind(this)}
                   isIOS={this.state.isIOS}
-                  src={this.state.path + (this.state.isIOS ? '/ios-screenshot.png' : '/android-screenshot.png') }
+                  src={(this.state.isIOS ? '/ios-screenshot.png' : '/android-screenshot.png') }
                 />
               </div>
               <div className="flex-col" ref="treeScroller">
@@ -116,7 +116,7 @@ class App extends Component {
                     frame={this.state.focusBounds}
                     onClick={this.handleCanvasClick.bind(this)}
                     isIOS={this.state.isIOS}
-                    src={this.state.path + (this.state.isIOS ? '/ios-screenshot.png' : '/android-screenshot.png')}
+                    src={(this.state.isIOS ? '/ios-screenshot.png' : '/android-screenshot.png')}
                   />
                 </div>
                 <div className="loading">Source node Invalid.</div>
