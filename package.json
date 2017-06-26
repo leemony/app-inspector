@@ -58,7 +58,7 @@
   "scripts": {
     "test": "make test",
     "jshint": "make jshint",
-    "start": "node ./bin/app-inspector --verbose",
+    "start": "node ./bin/app-inspector -s --verbose",
     "build": "webpack -p",
     "prepublish": "npm run build"
   },
