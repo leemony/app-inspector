@@ -1,18 +1,17 @@
 {
-  "name": "app-inspector",
-  "version": "1.2.18",
+  "name": "mtat-inspector",
+  "version": "1.0.2",
   "description": "app inspector",
   "keywords": [
     "inspector",
     "macaca"
   ],
   "bin": {
-    "inspector": "./bin/app-inspector",
     "app-inspector": "./bin/app-inspector"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/macacajs/app-inspector.git"
+    "url": "https://github.com/leemony/app-inspector.git"
   },
   "dependencies": {
     "chalk": "^1.1.3",
@@ -57,16 +56,16 @@
     "whatwg-fetch": "^1.0.0"
   },
   "scripts": {
-    "test": "make test",
-    "jshint": "make jshint",
+    "forever_start": "forever start -o logs/forever_out.log -e logs/forever_err.log bin/app-inspector -s",
+    "forever_stop": "forever stop bin/app-inspector",
     "start": "node ./bin/app-inspector -s --verbose",
+    "test": "make test",
+    "lint": "make jshint",
     "build": "webpack -p",
     "prepublish": "npm run build"
   },
-  "homepage": "https://github.com/macacajs/app-inspector",
-  "bugs": "https://github.com/macacajs/app-inspector/issues/new",
-  "license": "MIT",
-  "optionalDependencies": {
-    "ios-utils": "^1.0.4"
-  }
+  "pre-commit": [
+    "lint"
+  ],
+  "license": "MTAT"
 }

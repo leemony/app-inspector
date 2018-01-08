@@ -1,3 +1,3 @@
-cd E:\app-inspector
-E:
-forever start -o logs/forever_out.log -e logs/forever_err.log bin/app-inspector -s
+cd %~dp0 
+cd ..
+npm run forever_start

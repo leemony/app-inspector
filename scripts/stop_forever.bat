@@ -1,3 +1,3 @@
-cd E:\app-inspector
-E:
-forever stop bin/app-inspector
+cd %~dp0 
+cd ..
+npm run forever_stop
