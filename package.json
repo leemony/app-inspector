@@ -63,18 +63,10 @@
     "build": "webpack -p",
     "prepublish": "npm run build"
   },
-  "pre-commit": [
-    "jshint"
-  ],
   "homepage": "https://github.com/macacajs/app-inspector",
   "bugs": "https://github.com/macacajs/app-inspector/issues/new",
   "license": "MIT",
   "optionalDependencies": {
-    "ios-simulator": "^1.0.7",
-    "ios-utils": "^1.0.4",
-    "macaca-adb": "^1.0.17",
-    "uiautomator-client": "^1.0.16",
-    "webdriveragent": "^1.0.12",
-    "xctest-client": "^1.0.16"
+    "ios-utils": "^1.0.4"
   }
 }
